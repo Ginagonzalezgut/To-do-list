@@ -4,7 +4,7 @@ function App() {
   return (
     <>
       <header className="header">
-        <h1 className="header__title">To do</h1>
+        <h1 className="header__title">To Do</h1>
         <label htmlFor="search" className="header__search">
           <i className=" header__icon fa-solid fa-magnifying-glass"></i>
 
