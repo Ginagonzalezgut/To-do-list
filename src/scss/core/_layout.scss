@@ -1,0 +1,9 @@
+.app {
+  display: flex;
+  flex-direction: row;
+}
+
+.main {
+  padding-inline: 48px;
+  flex: 1;
+}
