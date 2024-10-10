@@ -5,6 +5,11 @@ body {
   background-color: #fafafa;
   font-family: "Work Sans";
 }
+
+.main {
+  padding-inline: 24px;
+}
+
 .header {
   background-color: #3700b3;
   width: 100%;
@@ -26,10 +31,14 @@ body {
     top: 12px;
   }
   &__input {
-    width: 500px;
+    width: 200px;
     padding-left: 35px;
     padding-block: 10px;
     border-radius: 8px;
+
+    @media (min-width: 768px) {
+      width: 500px;
+    }
   }
   &__search {
     position: relative;
