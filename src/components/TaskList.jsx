@@ -1,16 +1,14 @@
 import AddTaskForm from "./AddTaskForm";
-import Task from "./Task";
+import TaskItem from "./TaskItem";
+import { useParams } from "react-router-dom";
 
 function TaskList() {
+  const { id } = useParams();
+  console.log(id);
   return (
     <div className="task-list">
       <h1 className="task-list__title">My Things To Do</h1>
       <AddTaskForm />
-      {[{ text: "Hacer ejercicio" }, { text: "Comer sano" }].map(
-        (task, index) => (
-          <Task task={task} key={index} />
-        )
-      )}
     </div>
   );
 }

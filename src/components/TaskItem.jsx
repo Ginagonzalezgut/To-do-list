@@ -1,4 +1,4 @@
-function Task({ task }) {
+function TaskItem({ task }) {
   return (
     <div className="task">
       <button className="task__button"></button>
@@ -10,4 +10,4 @@ function Task({ task }) {
   );
 }
 
-export default Task;
+export default TaskItem;

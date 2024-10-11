@@ -1,3 +1,4 @@
+import { Route, Routes } from "react-router-dom";
 import "../scss/App.scss";
 import Header from "./Header";
 import TaskList from "./TaskList";
@@ -7,7 +8,9 @@ function App() {
     <div className="app">
       <Header />
       <main className="main">
-        <TaskList />
+        <Routes>
+          <Route path="/list/:id" element={<TaskList />} />
+        </Routes>
       </main>
     </div>
   );

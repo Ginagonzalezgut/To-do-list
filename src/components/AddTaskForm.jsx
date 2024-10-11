@@ -4,8 +4,9 @@ function AddTaskForm() {
   const [text, setText] = useState("");
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault(), { ...text };
   };
+
   const handleChange = (event) => {
     setText(event.target.value);
   };

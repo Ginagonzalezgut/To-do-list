@@ -2,15 +2,17 @@
   margin-top: 30px;
   border-radius: 8px;
   color: #4a4a4a;
+
   &__item {
     padding: 16px;
-
     color: #4a4a4a;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: start;
   }
-
+  &__icon {
+    margin-right: 20px;
+  }
   .active {
     color: black;
     background-color: var(--list-active-background);
@@ -24,5 +26,25 @@
     background-color: #5700e8;
     color: white;
     text-align: center;
+  }
+}
+
+.createList {
+  display: flex;
+  position: relative;
+  padding-inline: 8px;
+  margin-top: 16px;
+
+  &__input {
+    flex: 1;
+    padding: 10px 7px;
+    border-radius: 8px;
+    padding-left: 46px;
+  }
+  &__icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
