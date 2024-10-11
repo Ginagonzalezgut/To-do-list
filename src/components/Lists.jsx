@@ -16,11 +16,25 @@ function Lists() {
       .catch((error) => console.error("Error:", error));
   }, []);
 
+  function handleDelete(id) {
+    const deletedItems = listItems.filter((listItem) => {
+      return listItem.id !== id;
+    });
+    setListItems(deletedItems);
+  }
+
   function renderlistItems() {
     return listItems.map((listItem) => {
-      return <ListItem listItem={listItem} key={listItem.id} />;
+      return (
+        <ListItem
+          listItem={listItem}
+          key={listItem.id}
+          onDelete={handleDelete}
+        />
+      );
     });
   }
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -44,7 +58,6 @@ function Lists() {
       name: event.target.value,
     });
   };
-
   return (
     <>
       <div className="list">

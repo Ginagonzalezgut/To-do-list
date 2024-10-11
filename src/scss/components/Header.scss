@@ -1,6 +1,6 @@
 .header {
   background-color: var(--sidebar-background);
-  height: 100vh;
+  min-height: 100vh;
   display: none;
   flex-direction: column;
   padding: 24px;
