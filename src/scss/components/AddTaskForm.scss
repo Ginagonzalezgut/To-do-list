@@ -9,7 +9,7 @@
   }
   &__input {
     font-size: 16px;
-    padding: 20px;
+    padding: 10px;
     border: 1px solid var(--field-border);
     width: 100%;
     border-top-left-radius: 8px;
@@ -17,13 +17,17 @@
     outline: none;
     background: var(--field-background);
 
+    @media (min-width: $tablet) {
+      padding: 20px;
+    }
+
     &:focus {
       border-color: #3700b3;
     }
   }
 
   &__button {
-    padding: 22px 4px;
+    padding: 12px 4px;
     width: 120px;
     display: block;
     background-color: #5700e8;
@@ -31,6 +35,10 @@
     color: white;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
+
+    @media (min-width: $tablet) {
+      padding: 22px 4px;
+    }
 
     &:hover {
       background-color: #6200ee;

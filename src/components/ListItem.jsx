@@ -7,6 +7,7 @@ function ListItem({ listItem, onDelete, onClick }) {
 
   function handleOpenMenu(event) {
     event.preventDefault();
+    event.stopPropagation();
     setIsOpen(true);
   }
   function handleDeleteIcon() {
