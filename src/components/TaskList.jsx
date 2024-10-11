@@ -1,5 +1,4 @@
 import AddTaskForm from "./AddTaskForm";
-import TaskItem from "./TaskItem";
 import { useParams } from "react-router-dom";
 
 function TaskList() {

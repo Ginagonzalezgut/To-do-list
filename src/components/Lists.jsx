@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { Form, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import ListItem from "./ListItem";
 
 function Lists() {
   const [listItems, setListItems] = useState([]);
@@ -17,14 +18,7 @@ function Lists() {
 
   function renderlistItems() {
     return listItems.map((listItem) => {
-      return (
-        <Link key={listItem.id} to={`/list/${listItem.id}`}>
-          <div className="list__item">
-            <i className="fa-solid fa-list list__icon"></i>
-            {listItem.name}
-          </div>
-        </Link>
-      );
+      return <ListItem listItem={listItem} key={listItem.id} />;
     });
   }
   const handleSubmit = (event) => {
