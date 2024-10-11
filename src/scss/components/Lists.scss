@@ -4,18 +4,23 @@
   color: #4a4a4a;
 
   &__item {
-    padding: 16px;
+    padding: 8px 16px;
     color: #4a4a4a;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     position: relative;
+
+    &__link {
+      padding: 8px 0;
+    }
   }
   &__icon {
     margin-right: 20px;
   }
   &__ellipsis {
     color: #5700e8;
+    padding: 12px;
   }
   &__menu {
     position: absolute;
