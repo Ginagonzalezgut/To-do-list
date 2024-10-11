@@ -15,5 +15,10 @@
     align-items: center;
     font-weight: 400;
     margin-bottom: 24px;
+    font-size: 24px;
+
+    @media (min-width: $tablet) {
+      font-size: 32px;
+    }
   }
 }

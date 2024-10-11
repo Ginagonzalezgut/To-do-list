@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-function ListItem({ listItem, onDelete }) {
+function ListItem({ listItem, onDelete, onClick }) {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
 
@@ -25,7 +25,7 @@ function ListItem({ listItem, onDelete }) {
   }, []);
 
   return (
-    <Link key={listItem.id} to={`/list/${listItem.id}`}>
+    <Link key={listItem.id} to={`/list/${listItem.id}`} onClick={onClick}>
       <div className="list__item">
         <div>
           <i className="fa-solid fa-list list__icon"></i>

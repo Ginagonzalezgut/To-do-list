@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import ListItem from "./ListItem";
 
-function Lists({ searchText }) {
+function Lists({ searchText, onClick }) {
   const [listItems, setListItems] = useState([]);
   const [newList, setNewList] = useState({ name: "" });
 
@@ -34,6 +34,7 @@ function Lists({ searchText }) {
             listItem={listItem}
             key={listItem.id}
             onDelete={handleDelete}
+            onClick={onClick}
           />
         );
       });

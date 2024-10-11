@@ -6,8 +6,32 @@
   padding: 24px;
   width: 400px;
 
+  @media (max-width: $tablet) {
+    &.open {
+      display: flex;
+      position: absolute;
+      width: 100vw;
+    }
+  }
+
   @media (min-width: $tablet) {
     display: flex;
+  }
+
+  &__menu-trigger {
+    color: #5700e8;
+    display: block;
+    font-size: 24px;
+    position: relative;
+    left: 16px;
+    top: 16px;
+    height: 32px;
+    width: 32px;
+    z-index: 1;
+
+    @media (min-width: $tablet) {
+      display: none;
+    }
   }
 
   &__title {
@@ -19,7 +43,8 @@
   &__icon {
     position: absolute;
     left: 12px;
-    top: 10px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   &__input {
@@ -33,5 +58,12 @@
 
   &__search {
     position: relative;
+    float: right;
+    width: 75%;
+
+    @media (min-width: $tablet) {
+      float: none;
+      width: 100%;
+    }
   }
 }
