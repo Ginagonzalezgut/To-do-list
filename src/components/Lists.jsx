@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import ListItem from "./ListItem";
 
-function Lists() {
+function Lists({ searchText }) {
   const [listItems, setListItems] = useState([]);
   const [newList, setNewList] = useState({ name: "" });
 
@@ -24,15 +24,19 @@ function Lists() {
   }
 
   function renderlistItems() {
-    return listItems.map((listItem) => {
-      return (
-        <ListItem
-          listItem={listItem}
-          key={listItem.id}
-          onDelete={handleDelete}
-        />
-      );
-    });
+    return listItems
+      .filter((listitem) => {
+        return listitem.name.toLowerCase().includes(searchText.toLowerCase());
+      })
+      .map((listItem) => {
+        return (
+          <ListItem
+            listItem={listItem}
+            key={listItem.id}
+            onDelete={handleDelete}
+          />
+        );
+      });
   }
 
   const handleSubmit = (event) => {
