@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import AddTaskForm from "./AddTaskForm";
 import { useParams } from "react-router-dom";
+import TaskItem from "./TaskItem";
 
 function TaskList() {
   const [list, setList] = useState();
+  const [tasks, setTasks] = useState();
 
   const { id } = useParams();
 
@@ -12,6 +14,7 @@ function TaskList() {
       .then((response) => response.json())
       .then((data) => {
         setList(data);
+        setTasks(data.tasks);
       });
   }, [id]);
 
@@ -19,10 +22,28 @@ function TaskList() {
     return <p>Loading...</p>;
   }
 
+  function renderTask() {
+    return tasks.map((task) => {
+      return <TaskItem key={task.id} task={task} onDelete={handleDelete} />;
+    });
+  }
+
+  function handleCreateTask(newTask) {
+    setTasks([...tasks, newTask]);
+  }
+
+  function handleDelete(id) {
+    setTasks(
+      tasks.filter((task) => {
+        return task.id !== id;
+      })
+    );
+  }
   return (
     <div className="task-list">
       <h1 className="task-list__title">{list.name}</h1>
-      <AddTaskForm />
+      <AddTaskForm listId={id} onCreateTask={handleCreateTask} />
+      {renderTask()}
     </div>
   );
 }
