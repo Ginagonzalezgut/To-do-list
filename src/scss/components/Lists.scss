@@ -11,6 +11,20 @@
     justify-content: space-between;
     position: relative;
 
+    &--active {
+      color: white;
+      background-color: #5417b7;
+      border-radius: 8px;
+
+      .list__ellipsis {
+        color: white;
+      }
+
+      &:hover {
+        background-color: #5700e8;
+      }
+    }
+
     &__link {
       padding: 8px 0;
     }
@@ -51,11 +65,6 @@
     }
   }
 
-  .active {
-    color: black;
-    background-color: var(--list-active-background);
-    border-radius: 8px;
-  }
   .number {
     display: inline-block;
     width: 20px;

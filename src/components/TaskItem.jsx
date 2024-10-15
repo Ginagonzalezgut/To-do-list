@@ -12,8 +12,12 @@ function TaskItem({ task, onDelete }) {
 
   return (
     <div className="task">
-      <button className="task__button"></button>
-      <span className="task__title">{task.text}</span>
+      <button className="task__button "></button>
+      <span
+        className={`task__title ${task.completed ? "task__completed" : ""}`}
+      >
+        {task.text}
+      </span>
       <button className="task__delete" onClick={handleDelete}>
         <i className="fa-regular fa-trash-can"></i>
       </button>

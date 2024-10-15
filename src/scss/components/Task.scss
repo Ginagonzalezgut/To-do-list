@@ -27,4 +27,9 @@
     background: none;
     border: none;
   }
+
+  &__completed {
+    text-decoration: line-through;
+    color: grey;
+  }
 }

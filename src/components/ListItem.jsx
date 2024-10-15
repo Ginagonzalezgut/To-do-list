@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-function ListItem({ listItem, onDelete, onClick }) {
+function ListItem({ listItem, onDelete, onClick, isActive }) {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
 
@@ -25,7 +25,7 @@ function ListItem({ listItem, onDelete, onClick }) {
   }, []);
 
   return (
-    <div className="list__item">
+    <div className={`list__item ${isActive ? "list__item--active" : ""}`}>
       <Link
         className="list__item__link"
         key={listItem.id}

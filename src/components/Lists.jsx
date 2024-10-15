@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ListItem from "./ListItem";
 
 function Lists({ searchText, onClick }) {
   const [listItems, setListItems] = useState([]);
   const [newList, setNewList] = useState({ name: "" });
+  const location = useLocation();
+  const id = location.pathname.split("/list/")[1];
+
+  console.log(id);
 
   useEffect(() => {
     fetch("https://todolist-api-my16.onrender.com/lists")
@@ -29,12 +33,15 @@ function Lists({ searchText, onClick }) {
         return listitem.name.toLowerCase().includes(searchText.toLowerCase());
       })
       .map((listItem) => {
+        const isActive = listItem.id === parseInt(id);
+        console.log(listItem.id, "===", id);
         return (
           <ListItem
             listItem={listItem}
             key={listItem.id}
             onDelete={handleDelete}
             onClick={onClick}
+            isActive={isActive}
           />
         );
       });
