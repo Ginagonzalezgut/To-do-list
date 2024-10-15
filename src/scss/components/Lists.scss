@@ -95,3 +95,16 @@
     transform: translateY(-50%);
   }
 }
+.add-list-button {
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  display: block;
+  padding: 0;
+  text-align: center;
+  font-size: 25px;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  line-height: 48px;
+}

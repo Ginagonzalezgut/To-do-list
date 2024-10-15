@@ -1,16 +1,18 @@
 import { Link } from "react-router-dom";
 
-function Button({ children, onClick, isLink, to }) {
+function Button({ children, onClick, isLink, to, className }) {
+  const _className = `button ${className}`;
+
   if (isLink) {
     return (
-      <Link to={to} className="button">
+      <Link to={to} className={_className}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button onClick={onClick} className="button">
+    <button onClick={onClick} className={_className}>
       {children}
     </button>
   );

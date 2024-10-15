@@ -31,23 +31,31 @@ function CreateList({ onCreateList }) {
   }
 
   return (
-    <div>
-      <h1>Create New List</h1>
-      <form className="createList" onSubmit={handleSubmit}>
-        <label htmlFor="createList">Name of the List:</label>
-        <input
-          className="createList__input"
-          type="text"
-          name="createList"
-          id="createList"
-          placeholder="Name of the list (e.g., Shopping, Work)"
-          onChange={handleChange}
-          value={newList.name}
-        />
-        <Button>
-          <i className="fa-solid fa-plus"></i> Create list
-        </Button>
-      </form>
+    <div className="create-new-list-container">
+      <div className="create-list-background">
+        <h1 className="create-new-list-title">Create New List</h1>
+        <form className="create-list-form" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="createList" className="form-label">
+              Name of the List:
+            </label>
+            <input
+              autoFocus
+              required
+              className="create-list-input"
+              type="text"
+              name="createList"
+              id="createList"
+              placeholder=" Shopping, Vacations...)"
+              onChange={handleChange}
+              value={newList.name}
+            />
+          </div>
+          <Button className="create-list-button">
+            <i className="fa-solid fa-plus"></i> Create list
+          </Button>
+        </form>
+      </div>
     </div>
   );
 }

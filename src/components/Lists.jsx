@@ -29,7 +29,7 @@ function Lists({ searchText, onClick, lists, onDelete }) {
   return (
     <>
       <div className="list">{renderlistItems()}</div>
-      <Button isLink to="/create-list">
+      <Button className="add-list-button" isLink to="/create-list">
         +
       </Button>
     </>
