@@ -31,7 +31,12 @@ function TaskItem({ task, onDelete, onToggle }) {
 
   return (
     <div className="task">
-      <button onClick={handleToggleTask} className="task__button "></button>
+      <button
+        onClick={handleToggleTask}
+        className={`task__button ${
+          task.completed ? "task__completed--button" : ""
+        } `}
+      ></button>
       <span
         className={`task__title ${task.completed ? "task__completed" : ""}`}
       >
