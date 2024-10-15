@@ -8,7 +8,9 @@ function EmptyState() {
       <p className="empty-state__description">
         Crea tu primera lista para comenzar a organizar tus tareas.
       </p>
-      <Button>Create a List</Button>
+      <Button to="/create-list" isLink>
+        Create a List
+      </Button>
     </div>
   );
 }

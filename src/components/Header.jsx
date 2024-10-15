@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Lists from "./Lists";
 
-function Header() {
+function Header({ lists, onDeleteList }) {
   const [searchText, setSearchText] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
@@ -48,7 +48,12 @@ function Header() {
           </label>
         </form>
 
-        <Lists searchText={searchText} onClick={handleClickItem} />
+        <Lists
+          lists={lists}
+          searchText={searchText}
+          onClick={handleClickItem}
+          onDelete={onDeleteList}
+        />
       </header>
     </>
   );
