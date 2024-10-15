@@ -1,0 +1,23 @@
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  color: #999;
+
+  &__title {
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    margin-bottom: 24px;
+  }
+}
+
+.empty-state__icon {
+  font-size: 80px;
+  margin-bottom: 32px;
+}
