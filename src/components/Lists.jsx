@@ -7,11 +7,16 @@ function Lists({ searchText, onClick, lists, onDelete, onClickAddList }) {
   const id = location.pathname.split("/list/")[1];
 
   function renderlistItems() {
-    return lists
-      .filter((listitem) => {
-        return listitem.name.toLowerCase().includes(searchText.toLowerCase());
-      })
-      .map((listItem) => {
+    const filterLists = lists.filter((listitem) => {
+      return listitem.name.toLowerCase().includes(searchText.toLowerCase());
+    });
+
+    if (filterLists.length === 0) {
+      return (
+        <p className="message-not-found">Your search did not match any list</p>
+      );
+    } else {
+      return filterLists.map((listItem) => {
         const isActive = listItem.id === parseInt(id);
 
         return (
@@ -24,6 +29,7 @@ function Lists({ searchText, onClick, lists, onDelete, onClickAddList }) {
           />
         );
       });
+    }
   }
 
   return (
