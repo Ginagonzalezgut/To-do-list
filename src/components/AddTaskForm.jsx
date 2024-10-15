@@ -34,6 +34,7 @@ function AddTaskForm({ listId }) {
           Task
         </label>
         <input
+          required
           className="addTask__input"
           type="text"
           name="task"
