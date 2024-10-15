@@ -24,7 +24,14 @@ function TaskList() {
 
   function renderTask() {
     return tasks.map((task) => {
-      return <TaskItem key={task.id} task={task} onDelete={handleDelete} />;
+      return (
+        <TaskItem
+          key={task.id}
+          task={task}
+          onDelete={handleDelete}
+          onToggle={handleToggle}
+        />
+      );
     });
   }
 
@@ -39,6 +46,19 @@ function TaskList() {
       })
     );
   }
+
+  function handleToggle(id, completed) {
+    setTasks(
+      tasks.map((task) => {
+        if (task.id === id) {
+          return { ...task, completed: completed };
+        } else {
+          return task;
+        }
+      })
+    );
+  }
+
   return (
     <div className="task-list">
       <h1 className="task-list__title">{list.name}</h1>

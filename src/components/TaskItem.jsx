@@ -1,4 +1,23 @@
-function TaskItem({ task, onDelete }) {
+function TaskItem({ task, onDelete, onToggle }) {
+  function handleToggleTask() {
+    fetch(
+      `https://todolist-api-my16.onrender.com/lists/${task.list_id}/tasks/${task.id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          task: { completed: !task.completed },
+        }),
+      }
+    )
+      .then((response) => response.json())
+      .then(() => {
+        onToggle(task.id, !task.completed);
+      });
+  }
+
   function handleDelete() {
     fetch(
       `https://todolist-api-my16.onrender.com/lists/${task.list_id}/tasks/${task.id}`,
@@ -12,7 +31,7 @@ function TaskItem({ task, onDelete }) {
 
   return (
     <div className="task">
-      <button className="task__button "></button>
+      <button onClick={handleToggleTask} className="task__button "></button>
       <span
         className={`task__title ${task.completed ? "task__completed" : ""}`}
       >
