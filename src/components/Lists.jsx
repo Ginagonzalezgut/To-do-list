@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import ListItem from "./ListItem";
 import Button from "./Button";
 
-function Lists({ searchText, onClick, lists, onDelete }) {
+function Lists({ searchText, onClick, lists, onDelete, onClickAddList }) {
   const location = useLocation();
   const id = location.pathname.split("/list/")[1];
 
@@ -29,7 +29,12 @@ function Lists({ searchText, onClick, lists, onDelete }) {
   return (
     <>
       <div className="list">{renderlistItems()}</div>
-      <Button className="add-list-button" isLink to="/create-list">
+      <Button
+        className="add-list-button"
+        isLink
+        to="/create-list"
+        onClick={onClickAddList}
+      >
         +
       </Button>
     </>

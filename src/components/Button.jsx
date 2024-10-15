@@ -5,7 +5,7 @@ function Button({ children, onClick, isLink, to, className }) {
 
   if (isLink) {
     return (
-      <Link to={to} className={_className}>
+      <Link to={to} className={_className} onClick={onClick}>
         {children}
       </Link>
     );

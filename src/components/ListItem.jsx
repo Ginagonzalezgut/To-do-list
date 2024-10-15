@@ -23,7 +23,9 @@ function ListItem({ listItem, onDelete, onClick, isActive }) {
       }
     });
   }, []);
-
+  function handleClickAdd() {
+    setIsOpen(true);
+  }
   return (
     <div className={`list__item ${isActive ? "list__item--active" : ""}`}>
       <Link

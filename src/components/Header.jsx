@@ -24,7 +24,9 @@ function Header({ lists, onDeleteList }) {
   function handleClickItem() {
     setIsOpen(false);
   }
-
+  function handleClickAddList() {
+    setIsOpen(false);
+  }
   return (
     <>
       <button className="header__menu-trigger" onClick={handleOpenMenu}>
@@ -53,6 +55,7 @@ function Header({ lists, onDeleteList }) {
           searchText={searchText}
           onClick={handleClickItem}
           onDelete={onDeleteList}
+          onClickAddList={handleClickAddList}
         />
       </header>
     </>
