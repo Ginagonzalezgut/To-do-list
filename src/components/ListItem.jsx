@@ -44,16 +44,16 @@ function ListItem({ listItem, onDelete, onClick, isActive }) {
 
       {isOpen ? (
         <div className="list__menu">
-          <button className="list__menu__icons">
+          <button className="list__menu__button">
             <i className=" fa-solid fa-pencil"></i>
             <span className="list__menu__word"> Rename</span>
           </button>
-          <button onClick={handleDeleteIcon} className="list__menu__icons">
+          <button onClick={handleDeleteIcon} className="list__menu__button">
             <i className="list_menu__image fa-regular fa-trash-can"></i>
             <span className="list__menu__word"> Delete</span>
           </button>
-          <button className="list__menu__icons">
-            <i className="fa-solid fa-xmark"></i>
+          <button className="list__menu__button">
+            <i className="fa-solid fa-share-nodes"></i>
             <span className="list__menu__word"> Share</span>
           </button>
         </div>

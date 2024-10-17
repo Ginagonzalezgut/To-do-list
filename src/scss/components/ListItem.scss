@@ -41,7 +41,6 @@
     position: absolute;
     background-color: white;
     width: 200px;
-    height: 100px;
     border: 1px solid #ccc;
     display: flex;
     flex-direction: column;
@@ -57,8 +56,14 @@
       right: -170px;
     }
 
-    &__icons {
-      padding: 16px 0px 10px 20px;
+    &__button {
+      padding: 15px 24px;
+      width: 100%;
+      text-align: left;
+
+      &:hover {
+        background-color: #efefef;
+      }
     }
     &__word {
       margin-left: 12px;
