@@ -9,6 +9,22 @@
   gap: 24px;
   padding-top: 48px;
 
+  &__share-button {
+    width: 120px;
+    border-radius: 20px;
+    border: 1px solid #d1d1d6;
+    padding: 12px;
+    align-self: end;
+
+    &:hover {
+      background-color: #efefef;
+    }
+  }
+
+  &__share-icon {
+    margin-right: 20px;
+  }
+
   &__title {
     display: flex;
     justify-content: center;
