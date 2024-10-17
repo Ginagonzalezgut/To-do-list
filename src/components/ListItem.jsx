@@ -52,6 +52,10 @@ function ListItem({ listItem, onDelete, onClick, isActive }) {
             <i className="list_menu__image fa-regular fa-trash-can"></i>
             <span className="list__menu__word"> Delete</span>
           </button>
+          <button className="list__menu__icons">
+            <i className="fa-solid fa-xmark"></i>
+            <span className="list__menu__word"> Share</span>
+          </button>
         </div>
       ) : null}
     </div>
