@@ -59,7 +59,7 @@ function App() {
               />
             }
           />
-          <Route path="/" element={<EmptyState />} />
+          <Route path="/" element={<EmptyState lists={lists} />} />
         </Routes>
       </main>
     </div>
