@@ -1,18 +1,15 @@
 import { useState } from "react";
 
-function ShareModal({ onclose }) {
+function ShareModal({ onClose }) {
   const listUrl = window.location.href;
 
-  function handleClose() {
-    onclose();
-  }
   function handleCopyLink() {
     navigator.clipboard.writeText(listUrl);
   }
   return (
     <div className="share-modal__background">
       <div className="share-modal">
-        <button onClick={handleClose} className="share-modal__close">
+        <button onClick={onClose} className="share-modal__close">
           <i className=" share-modal__close-icon fa-solid fa-xmark"></i>
         </button>
         <div className="share-modal__title">Share your list</div>

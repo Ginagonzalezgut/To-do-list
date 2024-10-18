@@ -2,7 +2,14 @@ import { useLocation } from "react-router-dom";
 import ListItem from "./ListItem";
 import Button from "./Button";
 
-function Lists({ searchText, onClick, lists, onDelete, onClickAddList }) {
+function Lists({
+  searchText,
+  onClick,
+  lists,
+  onDelete,
+  onClickAddList,
+  onShare,
+}) {
   const location = useLocation();
   const id = location.pathname.split("/list/")[1];
 
@@ -26,6 +33,7 @@ function Lists({ searchText, onClick, lists, onDelete, onClickAddList }) {
             onDelete={onDelete}
             onClick={onClick}
             isActive={isActive}
+            onShare={onShare}
           />
         );
       });

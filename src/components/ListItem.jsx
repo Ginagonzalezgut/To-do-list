@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-function ListItem({ listItem, onDelete, onClick, isActive }) {
+function ListItem({ listItem, onDelete, onClick, isActive, onShare }) {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
 
@@ -52,7 +52,7 @@ function ListItem({ listItem, onDelete, onClick, isActive }) {
             <i className="list_menu__image fa-regular fa-trash-can"></i>
             <span className="list__menu__word"> Delete</span>
           </button>
-          <button className="list__menu__button">
+          <button onClick={onShare} className="list__menu__button">
             <i className="fa-solid fa-share-nodes"></i>
             <span className="list__menu__word"> Share</span>
           </button>
