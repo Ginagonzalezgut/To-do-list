@@ -65,7 +65,7 @@ function TaskList({ onShare, onClose, isModalOpen }) {
     <div className="task-list">
       <button className="task-list__share-button" onClick={onShare}>
         <i className=" task-list__share-icon fa-solid fa-share-nodes"></i>
-        Compartir
+        Share
       </button>
       <h1 className="task-list__title">{list.name}</h1>
       <AddTaskForm listId={id} onCreateTask={handleCreateTask} />

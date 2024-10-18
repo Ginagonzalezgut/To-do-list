@@ -1,11 +1,12 @@
 .header {
   background-color: var(--sidebar-background);
-  min-height: 100vh;
+  height: 100vh;
   display: none;
   flex-direction: column;
   padding: 24px;
   width: 400px;
   position: relative;
+  padding-bottom: 90px;
 
   @media (max-width: $tablet) {
     &.open {

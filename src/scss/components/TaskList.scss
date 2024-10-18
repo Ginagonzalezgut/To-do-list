@@ -10,11 +10,16 @@
   padding-top: 48px;
 
   &__share-button {
+    display: none;
     width: 120px;
     border-radius: 20px;
     border: 1px solid #d1d1d6;
     padding: 12px;
     align-self: end;
+
+    @media (min-width: $tablet) {
+      display: block;
+    }
 
     &:hover {
       background-color: #efefef;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function AddTaskForm({ listId }) {
+function AddTaskForm({ listId, onCreateTask }) {
   const [text, setText] = useState("");
 
   const handleSubmit = (event) => {
@@ -20,6 +20,7 @@ function AddTaskForm({ listId }) {
       .then((response) => response.json())
       .then((data) => {
         setText("");
+        onCreateTask(data);
       });
   };
 
