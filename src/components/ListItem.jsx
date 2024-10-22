@@ -58,7 +58,6 @@ function ListItem({ listItem, onDelete, onClick, isActive }) {
                 <i className=" fa-solid fa-pencil"></i>
                 <span className="list__menu__word"> Rename</span>
               </button>
-
               <button onClick={handleShare} className="list__menu__button">
                 <i className="fa-solid fa-share-nodes"></i>
                 <span className="list__menu__word"> Share</span>

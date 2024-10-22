@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "../scss/App.scss";
 import Header from "./Header";
 import TaskList from "./TaskList";
@@ -6,6 +6,7 @@ import EmptyState from "./EmptyState";
 import CreateList from "./CreateList";
 import { useEffect, useState } from "react";
 import { ShareProvider } from "../context/ShareContext";
+import LandingPage from "./LandingPage";
 
 function App() {
   const [lists, setLists] = useState([]);
@@ -36,6 +37,15 @@ function App() {
 
   function handleClose() {
     setIsModalOpen(false);
+  }
+
+  const location = useLocation();
+
+  // Verificamos si la ruta actual es la de la landing page
+  const isLandingPage = location.pathname === "/landing";
+
+  if (isLandingPage) {
+    return <LandingPage />;
   }
 
   return (
