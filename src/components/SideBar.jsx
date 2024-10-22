@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Lists from "./Lists";
+import { Link } from "react-router-dom";
 
 function SideBar({ lists, onDeleteList }) {
   const [searchText, setSearchText] = useState("");
@@ -57,6 +58,13 @@ function SideBar({ lists, onDeleteList }) {
           onDelete={onDeleteList}
           onClickAddList={handleClickAddList}
         />
+        <Link
+          to="/landing"
+          className="back-button"
+          aria-label="Regresar a la página principal"
+        >
+          <i className="fa-solid fa-house"></i>
+        </Link>
       </header>
     </>
   );

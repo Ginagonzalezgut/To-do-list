@@ -1,5 +1,6 @@
 import { Navigate } from "react-router-dom";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 function EmptyState({ lists }) {
   if (lists.length === 0) {
@@ -13,6 +14,7 @@ function EmptyState({ lists }) {
         <Button to="/create-list" isLink>
           Create a List
         </Button>
+        <Link to="/landing">Back to landing</Link>
       </div>
     );
   } else {
