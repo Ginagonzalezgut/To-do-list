@@ -3,7 +3,7 @@ import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 
 function CreateList({ onCreateList }) {
-  const [newList, setNewList] = useState({});
+  const [newList, setNewList] = useState({ name: "" });
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
