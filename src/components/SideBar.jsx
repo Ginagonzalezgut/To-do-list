@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Lists from "./Lists";
 
-function Header({ lists, onDeleteList }) {
+function SideBar({ lists, onDeleteList }) {
   const [searchText, setSearchText] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
@@ -62,4 +62,4 @@ function Header({ lists, onDeleteList }) {
   );
 }
 
-export default Header;
+export default SideBar;

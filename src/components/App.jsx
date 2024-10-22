@@ -1,12 +1,12 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import "../scss/App.scss";
-import Header from "./Header";
 import TaskList from "./TaskList";
 import EmptyState from "./EmptyState";
 import CreateList from "./CreateList";
 import { useEffect, useState } from "react";
 import { ShareProvider } from "../context/ShareContext";
 import LandingPage from "./LandingPage";
+import SideBar from "./SideBar";
 
 function App() {
   const [lists, setLists] = useState([]);
@@ -51,7 +51,7 @@ function App() {
   return (
     <ShareProvider value={{ isModalOpen, handleShare }}>
       <div className="app">
-        <Header lists={lists} onDeleteList={handleDeleteList} />
+        <SideBar lists={lists} onDeleteList={handleDeleteList} />
         <main className="main">
           <Routes>
             <Route
