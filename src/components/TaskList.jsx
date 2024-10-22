@@ -1,11 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import AddTaskForm from "./AddTaskForm";
 import { useParams } from "react-router-dom";
 import TaskItem from "./TaskItem";
 import Button from "./Button";
 import ShareModal from "./ShareModal";
 
-function TaskList({ onShare, onClose, isModalOpen }) {
+//importo el contexto JSX
+
+import ShareContext from "../context/ShareContext";
+
+function TaskList({ onClose }) {
+  const { isModalOpen, handleShare } = useContext(ShareContext);
   const [list, setList] = useState();
   const [tasks, setTasks] = useState();
 
@@ -63,7 +68,7 @@ function TaskList({ onShare, onClose, isModalOpen }) {
 
   return (
     <div className="task-list">
-      <button className="task-list__share-button" onClick={onShare}>
+      <button className="task-list__share-button" onClick={handleShare}>
         <i className=" task-list__share-icon fa-solid fa-share-nodes"></i>
         Share
       </button>

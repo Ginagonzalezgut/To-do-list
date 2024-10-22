@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Lists from "./Lists";
 
-function Header({ lists, onDeleteList, onShare }) {
+function Header({ lists, onDeleteList }) {
   const [searchText, setSearchText] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
@@ -56,7 +56,6 @@ function Header({ lists, onDeleteList, onShare }) {
           onClick={handleClickItem}
           onDelete={onDeleteList}
           onClickAddList={handleClickAddList}
-          onShare={onShare}
         />
       </header>
     </>

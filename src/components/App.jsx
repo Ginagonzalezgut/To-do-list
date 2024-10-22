@@ -5,6 +5,7 @@ import TaskList from "./TaskList";
 import EmptyState from "./EmptyState";
 import CreateList from "./CreateList";
 import { useEffect, useState } from "react";
+import { ShareProvider } from "../context/ShareContext";
 
 function App() {
   const [lists, setLists] = useState([]);
@@ -32,37 +33,36 @@ function App() {
   function handleShare() {
     setIsModalOpen(true);
   }
+
   function handleClose() {
     setIsModalOpen(false);
   }
 
   return (
-    <div className="app">
-      <Header
-        lists={lists}
-        onDeleteList={handleDeleteList}
-        onShare={handleShare}
-      />
-      <main className="main">
-        <Routes>
-          <Route
-            path="/create-list"
-            element={<CreateList onCreateList={handleCreateList} />}
-          />
-          <Route
-            path="/list/:id"
-            element={
-              <TaskList
-                onShare={handleShare}
-                onClose={handleClose}
-                isModalOpen={isModalOpen}
-              />
-            }
-          />
-          <Route path="/" element={<EmptyState lists={lists} />} />
-        </Routes>
-      </main>
-    </div>
+    <ShareProvider value={{ isModalOpen, handleShare }}>
+      <div className="app">
+        <Header lists={lists} onDeleteList={handleDeleteList} />
+        <main className="main">
+          <Routes>
+            <Route
+              path="/create-list"
+              element={<CreateList onCreateList={handleCreateList} />}
+            />
+            <Route
+              path="/list/:id"
+              element={
+                <TaskList
+                  onShare={handleShare}
+                  onClose={handleClose}
+                  isModalOpen={isModalOpen}
+                />
+              }
+            />
+            <Route path="/" element={<EmptyState lists={lists} />} />
+          </Routes>
+        </main>
+      </div>
+    </ShareProvider>
   );
 }
 

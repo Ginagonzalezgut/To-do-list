@@ -1,8 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
+import ShareContext from "../context/ShareContext";
 
-function ListItem({ listItem, onDelete, onClick, isActive, onShare }) {
+function ListItem({ listItem, onDelete, onClick, isActive }) {
+  const { handleShare } = useContext(ShareContext);
   const [isOpen, setIsOpen] = useState(false);
   const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });
   const menuRef = useRef(null);
@@ -29,6 +31,7 @@ function ListItem({ listItem, onDelete, onClick, isActive, onShare }) {
   function handleClickAdd() {
     setIsOpen(true);
   }
+
   return (
     <div className={`list__item ${isActive ? "list__item--active" : ""}`}>
       <Link
@@ -59,7 +62,7 @@ function ListItem({ listItem, onDelete, onClick, isActive, onShare }) {
                 <i className="list_menu__image fa-regular fa-trash-can"></i>
                 <span className="list__menu__word"> Delete</span>
               </button>
-              <button onClick={onShare} className="list__menu__button">
+              <button onClick={handleShare} className="list__menu__button">
                 <i className="fa-solid fa-share-nodes"></i>
                 <span className="list__menu__word"> Share</span>
               </button>
