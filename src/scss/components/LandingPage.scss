@@ -4,8 +4,12 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
-  padding: 0 150px;
+  justify-content: center;
+
+  @media (min-width: $tablet) {
+    justify-content: flex-start;
+    padding: 0 150px;
+  }
 
   &__logo {
     height: 36px;
@@ -17,7 +21,6 @@
   text-align: center;
   padding-block: 80px;
   background-color: #f5eee5;
-
   margin: auto;
 
   &__intro {
@@ -31,51 +34,77 @@
     color: transparent;
     background-clip: text;
     background-color: black;
-    font-size: 70px;
+    font-size: 40px;
     max-width: 900px;
     font-weight: 600;
     line-height: 1.2;
     margin: auto;
     margin-bottom: 40px;
+
+    @media (min-width: $tablet) {
+      font-size: 70px;
+    }
   }
 
   &__desc {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.75rem;
     max-width: 600px;
     margin: auto;
     margin-bottom: 54px;
+
+    @media (min-width: $tablet) {
+      font-size: 20px;
+    }
   }
 }
 
 .button-get-started {
-  width: 300px;
+  width: 200px;
   background-color: #5700e8;
   opacity: 1;
   border-radius: 10px;
-  padding: 18px;
+  padding: 15px;
   color: white;
   display: block;
   margin: auto;
+
+  @media (min-width: $tablet) {
+    width: 300px;
+    padding: 18px;
+  }
 }
 .container {
   width: 100%;
   background-color: rgb(74, 74, 74);
   text-align: center;
-  padding: 80px;
+  padding: 40px;
+
+  @media (min-width: $tablet) {
+    padding: 80px;
+  }
 
   &__title {
     color: white;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 400;
     margin-bottom: 30px;
+
+    @media (min-width: $tablet) {
+      font-size: 32px;
+    }
   }
 
   &__desc {
-    font-size: 24px;
+    font-size: 20px;
     color: white;
     font-weight: 200;
     margin-bottom: 60px;
+    line-height: 1.75rem;
+
+    @media (min-width: $tablet) {
+      font-size: 24px;
+    }
   }
 }
 
@@ -91,11 +120,20 @@
   flex-direction: column;
 
   &__icon {
-    font-size: 60px;
+    font-size: 40px;
     margin-bottom: 30px;
+
+    @media (min-width: $tablet) {
+      font-size: 60px;
+    }
   }
   &__desc {
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: 400;
+
+    @media (min-width: $tablet) {
+      font-size: 20px;
+    }
   }
 }
 
