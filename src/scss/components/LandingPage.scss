@@ -8,7 +8,6 @@
 
   @media (min-width: $tablet) {
     justify-content: flex-start;
-    padding: 0 150px;
   }
 
   &__logo {
@@ -147,4 +146,63 @@
   height: 72px;
   text-align: center;
   padding: 20px;
+}
+
+.landing__wrapper {
+  margin: auto;
+  max-width: 1280px;
+}
+
+.preview {
+  background-color: #fafafa;
+  padding-inline: 50px;
+
+  .landing__wrapper {
+    grid-template-columns: 1fr;
+    display: grid;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: $tablet) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  &-box {
+    order: 2;
+    @media (min-width: $tablet) {
+      order: 0;
+    }
+  }
+  &-image {
+    display: block;
+    margin: 40px 0 0 40px;
+    width: 400px;
+    @media (min-width: $small-desktop) {
+      width: 600px;
+    }
+  }
+  &-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    @media (min-width: $tablet) {
+      margin-top: 0;
+      margin-bottom: 30px;
+      text-align: start;
+    }
+  }
+  &-text {
+    order: 1;
+  }
+  &-desc {
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.5;
+    @media (min-width: $tablet) {
+      text-align: start;
+    }
+  }
 }
