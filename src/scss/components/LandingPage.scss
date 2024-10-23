@@ -60,14 +60,19 @@
 }
 
 .button-get-started {
+  background-color: #5417b7;
+  border: 1px solid #5417b7;
   width: 200px;
-  background-color: #5700e8;
   opacity: 1;
   border-radius: 10px;
   padding: 15px;
   color: white;
   display: block;
   margin: auto;
+
+  &:hover {
+    background-color: #5700e8;
+  }
 
   @media (min-width: $tablet) {
     width: 300px;

@@ -50,12 +50,13 @@
     border-radius: 8px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    right: 0;
     top: 28px;
     z-index: 1;
+    transform: translateX(-100%);
 
     @media (min-width: $tablet) {
       right: -170px;
+      transform: none;
     }
 
     &__button {
