@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router-dom";
 import "../scss/App.scss";
 import TaskList from "./TaskList";
 import EmptyState from "./EmptyState";
@@ -39,40 +39,40 @@ function App() {
     setIsModalOpen(false);
   }
 
-  const location = useLocation();
-
-  // Verificamos si la ruta actual es la de la landing page
-  const isLandingPage = location.pathname === "/landing";
-
-  if (isLandingPage) {
-    return <LandingPage />;
+  function AppLayout() {
+    return (
+      <ShareProvider value={{ isModalOpen, handleShare }}>
+        <div className="app">
+          <SideBar lists={lists} onDeleteList={handleDeleteList} />
+          <main className="main">
+            <Outlet />
+          </main>
+        </div>
+      </ShareProvider>
+    );
   }
 
   return (
-    <ShareProvider value={{ isModalOpen, handleShare }}>
-      <div className="app">
-        <SideBar lists={lists} onDeleteList={handleDeleteList} />
-        <main className="main">
-          <Routes>
-            <Route
-              path="/create-list"
-              element={<CreateList onCreateList={handleCreateList} />}
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/app" element={<AppLayout />}>
+        <Route
+          path="create-list"
+          element={<CreateList onCreateList={handleCreateList} />}
+        />
+        <Route
+          path="list/:id"
+          element={
+            <TaskList
+              onShare={handleShare}
+              onClose={handleClose}
+              isModalOpen={isModalOpen}
             />
-            <Route
-              path="/list/:id"
-              element={
-                <TaskList
-                  onShare={handleShare}
-                  onClose={handleClose}
-                  isModalOpen={isModalOpen}
-                />
-              }
-            />
-            <Route path="/" element={<EmptyState lists={lists} />} />
-          </Routes>
-        </main>
-      </div>
-    </ShareProvider>
+          }
+        />
+        <Route path="" element={<EmptyState lists={lists} />} />
+      </Route>
+    </Routes>
   );
 }
 

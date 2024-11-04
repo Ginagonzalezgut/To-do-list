@@ -19,7 +19,7 @@ function CreateList({ onCreateList }) {
       .then((response) => response.json())
       .then((data) => {
         onCreateList(data);
-        navigate(`/list/${data.id}`);
+        navigate(`/app/list/${data.id}`);
       });
   };
 

@@ -38,7 +38,7 @@ function Lists({ searchText, onClick, lists, onDelete, onClickAddList }) {
       <Button
         className="add-list-button"
         isLink
-        to="/create-list"
+        to="/app/create-list"
         onClick={onClickAddList}
       >
         +

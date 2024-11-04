@@ -37,7 +37,7 @@ function ListItem({ listItem, onDelete, onClick, isActive }) {
       <Link
         className="list__item__link"
         key={listItem.id}
-        to={`/list/${listItem.id}`}
+        to={`/app/list/${listItem.id}`}
         onClick={onClick}
       >
         <i className="fa-solid fa-list list__icon"></i>

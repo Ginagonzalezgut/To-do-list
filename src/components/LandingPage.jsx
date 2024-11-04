@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 function LandingPage() {
@@ -15,7 +14,7 @@ function LandingPage() {
           productive. Never miss a deadline again.
         </p>
         <div className="hero__buttons">
-          <Link to="/">
+          <Link to="/app">
             <button className="button-get-started">Get Started Free</button>
           </Link>
         </div>

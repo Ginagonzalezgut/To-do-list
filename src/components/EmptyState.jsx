@@ -10,13 +10,13 @@ function EmptyState({ lists }) {
         <p className="empty-state__description">
           Create your first list to start organizing your tasks.
         </p>
-        <Button to="/create-list" isLink>
+        <Button to="/app/create-list" isLink>
           Create a List
         </Button>
       </div>
     );
   } else {
-    return <Navigate to="/create-list" />;
+    return <Navigate to="/app/create-list" />;
   }
 }
 
