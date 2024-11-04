@@ -23,7 +23,11 @@ function LandingPage() {
       <section className="preview">
         <div className="landing__wrapper">
           <div className="preview-box">
-            <img className="preview-image" src="./prueba-web.png" alt="page" />
+            <img
+              className="preview-image"
+              src="./screenshot-app.png"
+              alt="page"
+            />
           </div>
           <div className="preview-text">
             <h1 className="preview-title">
