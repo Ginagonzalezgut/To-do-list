@@ -59,7 +59,7 @@ function SideBar({ lists, onDeleteList }) {
           onClickAddList={handleClickAddList}
         />
         <Link
-          to="/landing"
+          to="/"
           className="back-button"
           aria-label="Regresar a la página principal"
         >
