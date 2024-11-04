@@ -1,5 +1,7 @@
 # TaskMaster
 
+![Screenshot of the app](./public/screenshot.png)
+
 **TaskMaster** is a powerful and user-friendly to-do list application designed to simplify and organize your tasks. With TaskMaster, you can create, share, and manage your tasks efficiently, ensuring that you stay on top of everything you need to do.
 
 ## Table of Contents
