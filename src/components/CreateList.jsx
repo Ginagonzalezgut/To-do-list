@@ -4,11 +4,13 @@ import { useNavigate, Link } from "react-router-dom";
 
 function CreateList({ onCreateList }) {
   const [newList, setNewList] = useState({ name: "" });
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    setLoading(true);
     fetch("https://todolist-api-my16.onrender.com/lists", {
       method: "POST",
       headers: {
@@ -20,6 +22,12 @@ function CreateList({ onCreateList }) {
       .then((data) => {
         onCreateList(data);
         navigate(`/app/list/${data.id}`);
+      })
+      .catch((error) => {
+        console.error("Error creating list", error);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 
@@ -51,9 +59,13 @@ function CreateList({ onCreateList }) {
               value={newList.name}
             />
           </div>
-          <Button className="create-list-button">
-            <i className="fa-solid fa-plus"></i> Create list
-          </Button>
+          {loading ? (
+            <button>Loading</button>
+          ) : (
+            <button disabled={loading} className="button create-list-button">
+              <i className="fa-solid fa-plus"></i> Create list
+            </button>
+          )}
         </form>
       </div>
     </div>
