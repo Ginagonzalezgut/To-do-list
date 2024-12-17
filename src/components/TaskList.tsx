@@ -1,18 +1,16 @@
-import { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import AddTaskForm from "./AddTaskForm";
 import { useParams } from "react-router-dom";
 import TaskItem from "./TaskItem";
-import Button from "./Button";
 import ShareModal from "./ShareModal";
 
-//importo el contexto JSX
 
 import ShareContext from "../context/ShareContext";
 
 function TaskList({ onClose }) {
   const { isModalOpen, handleShare } = useContext(ShareContext);
   const [list, setList] = useState();
-  const [tasks, setTasks] = useState();
+  const [tasks, setTasks] = useState<{id: number}[]>([]);
 
   const { id } = useParams();
 

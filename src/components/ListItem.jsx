@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useContext } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import ShareContext from "../context/ShareContext";
