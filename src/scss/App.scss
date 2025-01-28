@@ -20,9 +20,4 @@ body {
   color: #1f2c33;
   background-color: #fff;
   font-family: "Inter", sans-serif;
-
-  @media (prefers-color-scheme: dark) {
-    background-color: black;
-    color: white;
-  }
 }
