@@ -13,11 +13,13 @@
 @import "components/ShareModal.scss";
 @import "components/ListItem.scss";
 @import "components/LandingPage.scss";
+@import "components/Features.scss";
+@import "components/Banner.scss";
 
 body {
-  color: #4a4a4a;
+  color: #1f2c33;
   background-color: #fff;
-  font-family: "Work Sans";
+  font-family: "Inter", sans-serif;
 
   @media (prefers-color-scheme: dark) {
     background-color: black;

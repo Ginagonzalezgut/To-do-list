@@ -1,0 +1,19 @@
+.banner {
+  background-color: #ebebeb;
+  padding: 128px 40px;
+
+  &__text {
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+
+    @media (min-width: $tablet) {
+      font-size: 48px;
+    }
+  }
+}
